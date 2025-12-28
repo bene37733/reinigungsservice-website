@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professioneller Reinigungsservice in Burghausen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 140px 2rem 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .services {
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        .hours-table {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+        
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">🧹 Reinigungsservice</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#features">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Professionelle Reinigung in Burghausen</h1>
+        <p>Ihr zuverlässiger Partner für Sauberkeit und Hygiene</p>
+        <a href="tel:+4986779136​75" class="cta-button">Jetzt anrufen: 08677 913675</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Büroreinigung</h3>
+                    <p>Professionelle Reinigung von Büros und Arbeitsplätzen. Für ein angenehmes und produktives Arbeitsumfeld.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Grundreinigung</h3>
+                    <p>Intensive Tiefenreinigung für ein perfektes Ergebnis. Ideal für besondere Anlässe oder Neuanfänge.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Standardreinigung</h3>
+                    <p>Regelmäßige Unterhaltsreinigung für Ihre Räumlichkeiten. Zuverlässig und gründlich.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Umzugsreinigung</h3>
+                    <p>Perfekte Reinigung nach dem Aus- oder vor dem Einzug. Damit alles bereit ist für den Neustart.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3>Fensterreinigung</h3>
+                    <p>Streifenfreie Reinigung von Fenstern innen und außen. Für klare Durchsicht das ganze Jahr.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Osmose Reinigung</h3>
+                    <p>Moderne Fensterreinigung mit Osmose-Technologie für langanhaltende Sauberkeit ohne Chemie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Warum uns wählen?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">♿</div>
+                    <h3>Barrierefrei</h3>
+                    <p>Rollstuhlgerechter Zugang, Parkplatz, Sitzgelegenheiten und WC</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>Inklusiv</h3>
+                    <p>LGBTQ+ freundlich und sicherer Raum für alle Menschen</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Sprachunterstützung</h3>
+                    <p>Wir sprechen mehrere Sprachen für Ihre Bequemlichkeit</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3>Online Kostenvoranschlag</h3>
+                    <p>Schnelle und transparente Preisgestaltung online verfügbar</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Kostenlose Parkplätze</h3>
+                    <p>Parkplatz und Straßenparkplätze kostenlos verfügbar</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👩</div>
+                    <h3>Frauengeführt</h3>
+                    <p>Stolz als frauengeführtes Unternehmen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt & Öffnungszeiten</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📍 Adresse</h3>
+                    <p>Klausenstraße 61<br>84489 Burghausen</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Telefon</h3>
+                    <p><a href="tel:08677913675">08677 913675</a></p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Termin erforderlich</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕐 Öffnungszeiten</h3>
+                    <div class="hours-table">
+                        <div class="hours-row">
+                            <span>Montag</span>
+                            <span>9:00 - 17:00</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Dienstag</span>
+                            <span>9:00 - 17:00</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Mittwoch</span>
+                            <span>9:00 - 17:00</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Donnerstag</span>
+                            <span>9:00 - 17:00</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Freitag</span>
+                            <span>9:00 - 17:00</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Samstag</span>
+                            <span>Geschlossen</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Sonntag</span>
+                            <span>Geschlossen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="badges">
+                <span class="badge">♿ Rollstuhlgerecht</span>
+                <span class="badge">🏳️‍🌈 LGBTQ+ freundlich</span>
+                <span class="badge">🚗 Kostenlose Parkplätze</span>
+                <span class="badge">🌍 Mehrsprachig</span>
+                <span class="badge">👩 Frauengeführt</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Reinigungsservice Burghausen. Alle Rechte vorbehalten.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Klausenstraße 61, 84489 Burghausen | Tel: 08677 913675</p>
+    </footer>
+</body>
+</html>
+
